@@ -18,7 +18,10 @@ export default function TodoForm({ setTodos }: Props) {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} style={{ display: "flex", gap: 8, marginBottom: 20 }}>
+        <form 
+            onSubmit={handleSubmit(onSubmit)} 
+            className="mb-5 flex gap-2"
+        >
             <input
                 {...register("todo", { required: true })}
                 placeholder="やることを入力"

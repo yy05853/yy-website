@@ -25,14 +25,24 @@ export default function TodoList({todos, setTodos}: Props) {
     }
 
     return (
-        <ul style={{ listStyle: "none", padding: 0, display: "grid", gap: 8 }}>
+        <ul className="grid gap-2">
             {todos.map((t) => (
-                <li key={t.id} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                <li 
+                    key={t.id} 
+                    className="flex items-center gap-3 rounded-lg border border-gray-200 px-3 py-2"
+                >
                     <input type="checkbox" checked={t.done} onChange={() => toggleDone(t.id)} />
-                    <span style={{ flex: 1, textDecoration: t.done ? "line-through" : "none" }}>
+                    <span 
+                        className={`flex-1 ${t.done ? "line-through text-gray-500" : ""}`}
+                    >
                         {t.title}
                     </span>
-                    <button onClick={() => removeTodo(t.id)}>削除</button>
+                    <button 
+                        onClick={() => removeTodo(t.id)}
+                        className="rounded-md border border-gray-300 px-3 py-1 text-sm transition hover:bg-gray-50"
+                    >
+                        削除
+                    </button>
                 </li>
             ))}
         </ul>

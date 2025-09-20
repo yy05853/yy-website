@@ -7,8 +7,8 @@ export default function App() {
     const [todos, setTodos] = useState<Todo[]>([]);
 
     return (
-        <main style={{ fontFamily: "system-ui, sans-serif", padding: 24, maxWidth: 520 }}>
-            <h1 style={{ marginBottom: 16 }}>TODO</h1>
+        <main className="mx-auto max-w-xl p-6 font-sans">
+            <h1 className="mb-4 text-2xl font-bold">TODO</h1>
             <TodoForm setTodos={setTodos} />
             <TodoList todos={todos} setTodos={setTodos} />
        </main>
