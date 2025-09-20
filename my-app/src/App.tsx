@@ -1,12 +1,7 @@
 import { useState } from "react";
 import TodoForm from "./component/TodoForm";
 import TodoList from "./component/TodoList";
-
-export type Todo = {
-    id: string;
-    title: string;
-    done: boolean;
-};
+import { Todo } from "./types"
 
 export default function App() {
     const [todos, setTodos] = useState<Todo[]>([]);
