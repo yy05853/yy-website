@@ -33,7 +33,7 @@ export default function TodoList({todos, setTodos}: Props) {
                 >
                     <input type="checkbox" checked={t.done} onChange={() => toggleDone(t.id)} />
                     <span 
-                        className={`flex-1 ${t.done ? "line-through text-gray-500" : ""}`}
+                        className={`flex-1 ${t.done ? "line-through text-gray-200" : ""}`}
                     >
                         {t.title}
                     </span>
