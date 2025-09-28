@@ -8,7 +8,7 @@ type Props = {
 export default function TodoList({todos, setTodos}: Props) {
     const toggleDone = (id: string) => {
         setTodos((prev) =>
-            prev.map((t) => (t.id === id ? { ...t, done: !t.done }: t))
+            prev.map((t) => (t.id === id ? { ...t, done: !t.done }: t)).sort((a, b) => (a.done === b.done ? 0 : a.done ? 1 : -1))
         );
     };
 
